@@ -2,6 +2,8 @@
 
 
 #define ll long long
+
+// to check if any char is whitespace
 bool isSpace(unsigned char c)
 {
     return (c==' ')||(c=='\n')||(c=='\t')||(c=='\r')||(c=='\v')||(c=='\f');
@@ -19,7 +21,7 @@ int Solution::atoi(const string A) {
         }
     }
     
-    
+    // takes in to consideration signed integer strings
     if( ((out[0] == '+') || (out[0] == '-')) && ((int(out[1]) > int('9')) || (int(out[1]) < int('0'))))
         return 0;
         
@@ -27,7 +29,6 @@ int Solution::atoi(const string A) {
     if(out[0] == '+')
         out = out.substr(1, out.length()-1);
     
-    // lower_bound
     for(ll i=0; i<out.length(); i++)
     {
         if(i==0 && out[i]=='-') continue;
@@ -44,7 +45,7 @@ int Solution::atoi(const string A) {
     bool neg= false;
     if(out[0] == '-')   neg = true;
     
-    // upper_bound
+   
     for(ll i=0; i<out.length();i++)
     {
         if(i==0 && neg) continue;
