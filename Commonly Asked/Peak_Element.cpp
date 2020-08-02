@@ -1,6 +1,6 @@
 
 // function to return the index of any peak element present in the array
-// O(n) time complexity O(1) auxiliary space
+// O(logn) time complexity O(1) auxiliary space
 
 
 int peakElement(int arr[], int n)
