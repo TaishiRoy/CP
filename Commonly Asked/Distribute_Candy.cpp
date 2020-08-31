@@ -1,7 +1,7 @@
 
 // function to find the minimum no. of candies required to give N children according to their ratings
 // moreat https://www.interviewbit.com/problems/distribute-candy/
-// O(n) time complexity O(1) auxiliary space
+// O(n) time complexity O(n) auxiliary space
 
 
 int candy(vector<int> &A) {
