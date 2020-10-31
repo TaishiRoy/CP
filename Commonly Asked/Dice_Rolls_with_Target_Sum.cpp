@@ -40,3 +40,45 @@ public:
          
     }
 };
+
+
+/*
+ // Tabulation dp
+ 
+ 
+ class Solution {
+public:
+    int numRollsToTarget(int d, int f, int target) {
+        long long int dp[d+1][target+1];
+        memset(dp, 0, sizeof(dp));
+        dp[0][0] = 1;
+        for(int i=1; i<=d; i++)
+        {
+            for(int j=i; j<=target; j++)
+            {
+                if(i==j)    
+                {
+                    dp[i][j]=1;
+                    continue;
+                }
+                if(i==1)
+                {
+                    dp[i][j] = j<=f ? 1 : 0;
+                    continue;
+                }
+                for(int k=1; k<=f; k++)
+                {
+                    if(k<j) 
+                    {
+                        dp[i][j]+= dp[i-1][j-k];
+                        dp[i][j]%= 1000000007;
+                    }
+                    else    break;
+                }
+            }
+        }
+        
+        return (dp[d][target])%1000000007;
+    }
+};
+*/
