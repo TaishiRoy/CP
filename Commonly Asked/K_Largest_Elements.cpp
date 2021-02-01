@@ -27,3 +27,32 @@ vector<int> kLargest(int arr[], int n, int k)
     sort(res.begin(), res.end(), greater<int>());
     return res;
 }
+
+// K largest elements
+// (using vector as heap with make_heap(), push_heap(), pop_heap())
+// O(k + (n-k)Logk + kLogk) 
+
+
+vector<int> kLargest2(int arr[], int n, int k)
+{
+    // code here
+    vector<int> pq;
+    for(int i=0; i<k; i++)
+    {
+        pq.push_back(arr[i]);
+        push_heap(pq.begin(), pq.end(), greater<int>());
+    }
+    for(int i=k; i<n; i++)
+    {
+        if(arr[i]>pq.front())
+        {
+            pop_heap(pq.begin(),pq.end(), greater<int>());
+            pq.pop_back();
+            pq.push_back(arr[i]);
+            push_heap(pq.begin(), pq.end(), greater<int>());
+        }
+    }
+    sort(pq.begin(), pq.end(), greater<int>());
+    return pq;
+}
+
